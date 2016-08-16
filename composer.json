@@ -1,0 +1,8 @@
+{
+    "name": "weiwait/socket",
+    "description": "learn socket",
+    "require": {
+        "php": ">=5.4",
+        "workerman/workerman": "3.3.3"
+    }
+}
