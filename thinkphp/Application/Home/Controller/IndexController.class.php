@@ -7,6 +7,6 @@ class IndexController extends Controller
 {
 	public function index()
 	{
-		$this->show('HelloWorld');
+		$this->show('Hello World');
 	}
 }
