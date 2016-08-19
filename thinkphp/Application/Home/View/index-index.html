@@ -5,27 +5,25 @@
     <title>socker</title>
 </head>
 <body>
-<div>
-    <input type="text" class="socker" style="width:88px; height:33px; margin:300px auto;">
-    <div class="submit" style="width:26px; height:20px; margin:10px auto;">发送</div>
-</div>
-<script src="__Public__/js/jquery.min.js"></script>
+    <input type="text" class="socker" style="width:188px; height:33px; margin:100px auto;" >
+    <div class="submit" style="width:50px; height:20px; margin:10px auto; border:1px solid #ccc; cursor:pointer;">发送</div>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
 <script>
     var ws = new WebSocket('ws://127.0.0.1:8888');
+    var time;
     ws.onopen = function() {
-        ws.send('getid');
         alert('connection success');
     }
     $('.submit').click(function() {
-        var news = $('.socker').arrt('value');
-        var time = new data().getTime();
-        var data = {"time" : time, "news" : news};
+        data = $('.socker').val();
+        time = new Date().getTime();
         ws.send(data);
     });
     ws.onmessage = function(e) {
-        if(e.time != time) {
-            alert(e.news);
-        }
+        alert(e.data);
+        // if(e.time != time) {
+        //     alert(e.news);
+        // }
     }
 </script>
 </body>
